@@ -1,8 +1,5 @@
 # Perfectz Discord Bot
 
-
-# Perfectz Discord Bot
-
 This is a **Discord Bot** which will help in your daily experience smoothly!\
 Bot Name - **Perfectz Bot**
 
