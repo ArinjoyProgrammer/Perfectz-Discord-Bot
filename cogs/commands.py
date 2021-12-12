@@ -2,6 +2,7 @@ import discord
 from discord import embeds
 from discord.ext import commands
 from datetime import datetime
+import random
 import time
 
 
@@ -19,6 +20,7 @@ class Commands(commands.Cog):
     async def slap(self, ctx, member: discord.Member, *, reason="No reason was given for Slapping!"):
 
         embed = discord.Embed(title="Slapped!!!", description=f"You slapped {member.mention}  |  Reason: **{reason}**", timestamp=datetime.utcnow(), color=ctx.author.color)
+        embed.set_image(url="https://cdn.discordapp.com/attachments/911200129611071490/919598098941091890/slap.jpg")
         await ctx.send(embed=embed)
 
     @commands.command()
@@ -70,6 +72,49 @@ class Commands(commands.Cog):
         embed.add_field(name="Developer", value="< Arinjoy.py />#0994", inline=False)
         embed.add_field(name="Support Us", value="[invite](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)")
         embed.set_footer(text=f"Command Requested By    {ctx.author}")
+
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def tos(self, ctx):
+        await ctx.send("Discord TOS: https://discord.com/terms/")
+
+    @commands.command(aliases=['8ball', '8b'])
+    async def eightball(self, ctx, *, question):
+        responses = [
+        'Hell no.',
+        'Prolly not.',
+        'Idk bro.',
+        'Prolly.',
+        'Hell yeah my dude.',
+        'It is certain.',
+        'It is decidedly so.',
+        'Without a Doubt.',
+        'Yes - Definitaly.',
+        'You may rely on it.',
+        'As i see it, Yes.',
+        'Most Likely.',
+        'Outlook Good.',
+        'Yes!',
+        'No!',
+        'Signs a point to Yes!',
+        'Reply Hazy, Try again.',
+        'IDK but u should Invite the bot with is [INVITE](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)!!!',
+        'Better not tell you know.',
+        'Cannot predict now.',
+        'Concentrate and ask again.',
+        "Don't Count on it.",
+        'My reply is No.',
+        'My sources say No.',
+        'Outlook not so good.',
+        'Very Doubtful']
+        await ctx.send(f":8ball: Question: {question}\n:8ball: Answer: {random.choice(responses)}")
+
+    @commands.command(aliases=['gm'])
+    async def goodmorning(self, ctx, *, member: discord.Member):
+
+        embed = discord.Embed(title="Good Morning", description=f"You wished **Good morning** to {member.mention}", timestamp=datetime.utcnow(), color=ctx.author.color)
+        embed.set_image(url="https://cdn.discordapp.com/attachments/911200129611071490/919604937040724059/gm.jpg")
 
         await ctx.send(embed=embed)
 

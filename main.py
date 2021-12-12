@@ -1,8 +1,11 @@
+from types import prepare_class
+from asyncio.locks import Event
 import discord
 from discord.ext import commands
 import os
 import asyncio
 import random
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -17,12 +20,6 @@ client.remove_command("help")
 @client.event
 async def on_ready():
     print("The Bot is Ready")
-
-
-
-@client.event
-async def on_member_join(ctx):
-    await ctx.channel.send("Thanks for **Inviting Me** in your server")
 
 
 

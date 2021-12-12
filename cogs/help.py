@@ -28,27 +28,27 @@ class HelpCommand(commands.Cog):
         embed.add_field(name = "_ _", value = "_ _", inline = False)
         embed.add_field(
             name = "Chat Commands (With Prefix)",
-            value = "``ping``, ``pong``, ``hi``, ``hello``, ``fine``, ``bad``, ``invite``, ``botinfo``",
+            value = "```ping, pong, hi, hello, fine, bad, invite, botinfo, goodmorning, 8ball```",
             inline = False
         )
         embed.add_field(name = "_ _", value = "_ _", inline = False)
         embed.add_field(
             name = "Fun Commands (With Prefix)",
-            value = "``slap``, ``wish``, ``luckynumber``, ``coolrate``, ``hack``, ``greet``, ``nowtime``, ``rip``, ``poll``, ``pollwrite``",
+            value = "```slap, wish, luckynumber, coolrate, hack, greet, nowtime, rip, poll, pollwrite```",
             inline = False
         )
         embed.add_field(name = "_ _", value = "_ _", inline = False)
         embed.add_field(
             name = "Special Commands (With Prefix)",
-            value = "``serverinfo``, ``whois``, ``joined``, ``membercount``, ``announcement``, ``say``",
+            value = "```serverinfo, whois, joined, membercount, announcement, say```",
             inline = False
         )
         embed.add_field(name="_ _", value="_ _", inline=False)
-        embed.add_field(name="Maintenance", value="``earlymaintenance``", inline=False)
+        embed.add_field(name="Others (With Prefix)", value="```earlymaintenance, event```", inline=False)
         embed.add_field(name = "_ _", value = "_ _", inline = False)
         embed.add_field(
             name = "Moderation Commands (With Prefix)",
-            value = "``mute``, ``unmute``, ``kick``, ``ban``, ``unban``, ``report``, ``warn``, ``clear``",
+            value = "```mute, unmute, kick, ban, unban, report, warn, clear```",
             inline = False
         )
         embed.add_field(name = "_ _", value = "_ _", inline = False)
@@ -59,7 +59,7 @@ class HelpCommand(commands.Cog):
         )
         embed.add_field(name = "_ _", value = "_ _", inline = False)
         embed.set_footer(
-            text = f"Developed By < Arinjoy.py />#8981\n\nRequested By  {ctx.author}"
+            text = f"Bot Developed By < Arinjoy.py />#8981\n\nRequested By  {ctx.author}"
         )
 
         await ctx.send(embed=embed)
