@@ -107,6 +107,11 @@ class ModerationCommands(commands.Cog):
         await ctx.channel.purge(limit=amount)
         await ctx.send("THE MESSAGES ARE DELETED", delete_after=2)
 
+    @clear.error
+    async def clear_error(self, error, ctx):
+        if isinstance(error, error.MissingPermissions):
+            await ctx.send(":redTick: You don't have permission to Clear/Delete messages!.")
+
 
 
 def setup(client):
