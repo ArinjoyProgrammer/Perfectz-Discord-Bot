@@ -30,7 +30,7 @@ For support, Contact us from our Email **arinjoy672@gmail.com**
 
 <strong><i> Made with ❤️ by
 
-[Arinjoy Github](https://github.com/ArinjoyProgrammer) • <  Arinjoy.py />#0994 <!-- • [Arinjoy Email](arinjoy672@gmail.com) -->
+[Arinjoy Github](https://github.com/ArinjoyProgrammer) • **Discord Id - <  Arinjoy.py />#0994** <!-- • [Arinjoy Email](arinjoy672@gmail.com) -->
 </i></strong>
 
 
