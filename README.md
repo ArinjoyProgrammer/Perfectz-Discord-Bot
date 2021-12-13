@@ -28,10 +28,13 @@ This Repository contains **[MIT LICENSE](LICENSE)**
 For support, Contact us from our Email **arinjoy672@gmail.com**
 
 
+<div align="center">
 <strong><i> Made with ❤️ by
 
 [Arinjoy Github](https://github.com/ArinjoyProgrammer) • **Discord Id - <  Arinjoy.py />#0994** <!-- • [Arinjoy Email](arinjoy672@gmail.com) -->
 </i></strong>
+</div>
+
 
 
 <!-- This bot is now under DEVELOPMENT
