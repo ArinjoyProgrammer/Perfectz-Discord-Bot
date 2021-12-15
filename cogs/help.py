@@ -57,6 +57,8 @@ class HelpCommand(commands.Cog):
             value = "[Invite](https://discord.com/api/oauth2/authorize?client_id=916706978749894666&permissions=545460846583&scope=bot)",
             inline = False
         )
+        embed.add_field(name="_ _", value="_ _", inline=False)
+        embed.add_field(name="Roles Commands (With Prefix)", value="addroles <member mention> <role name>\nremoveroles <member mention> <role name>", inline=False)
         embed.add_field(name = "_ _", value = "_ _", inline = False)
         embed.set_footer(
             text = f"Bot Developed By < Arinjoy.py />#8981\n\nRequested By  {ctx.author}"

@@ -1,6 +1,6 @@
 # Perfectz Discord Bot [![Discord](https://discord.com/api/guilds/748808130946793483/embed.png)](https://discord.gg/FwCdnWAh)
 
-This is a **Discord Bot** that will help your daily experience smoothly!\
+This is a **Discord Bot** which will help in your daily experience smoothly!\
 Bot Name - **Perfectz Bot**
 
 ## Features Of the bot

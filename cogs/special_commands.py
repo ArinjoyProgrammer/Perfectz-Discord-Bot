@@ -160,5 +160,18 @@ class SpecialCommands(commands.Cog):
         await ctx.send(f"**{member}** joined on **{time_joined}**")
 
 
+    @commands.command()
+    async def botruntime(self, ctx):
+
+        now = datetime.utcnow()
+        starttime = datetime.utcnow()
+        elapsed =  now - starttime
+        seconds = elapsed.seconds
+        minutes, seconds = divmod(seconds, 60)
+        hours, minutes = divmod(minutes, 60)
+
+        await ctx.send(f"Running for {elapsed.days}d {hours}h {minutes}m {seconds}s")
+
+
 def setup(client):
     client.add_cog(SpecialCommands(client))
