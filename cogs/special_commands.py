@@ -80,7 +80,7 @@ class SpecialCommands(commands.Cog):
     # view futures maintenance
     @commands.command()
     async def earlymaintenance(self, ctx):
-        await ctx.send("The maintenance is now going on!")
+        await ctx.send("The maintenance will be planned later\nNow you can use the bot freely")
 
 
     @commands.command()

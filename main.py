@@ -26,7 +26,7 @@ async def on_ready():
 async def ch_pr():
     await client.wait_until_ready()
 
-    statuses = ['p.help', f'On {len(client.guilds)} servers', 'Made using Discord.py', "DEV -> ARINJOY"]
+    statuses = ['p.help', f'On {len(client.guilds)} servers']
 
     while not client.is_closed():
         status = random.choice(statuses)
