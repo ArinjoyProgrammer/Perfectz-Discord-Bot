@@ -7,6 +7,7 @@ import asyncio
 import random
 from PIL import Image
 from io import BytesIO
+from discord_components import *
 
 
 class SpecialCommands(commands.Cog):
@@ -158,19 +159,6 @@ class SpecialCommands(commands.Cog):
         time_joined = joined_at.strftime("Date: %d/%m/%y  |  Time: %H:%M:%S")
 
         await ctx.send(f"**{member}** joined on **{time_joined}**")
-
-
-    @commands.command()
-    async def botruntime(self, ctx):
-
-        now = datetime.utcnow()
-        starttime = datetime.utcnow()
-        elapsed =  now - starttime
-        seconds = elapsed.seconds
-        minutes, seconds = divmod(seconds, 60)
-        hours, minutes = divmod(minutes, 60)
-
-        await ctx.send(f"Running for {elapsed.days}d {hours}h {minutes}m {seconds}s")
 
 
 def setup(client):

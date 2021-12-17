@@ -28,7 +28,7 @@ class HelpCommand(commands.Cog):
         embed.add_field(name = "_ _", value = "_ _", inline = False)
         embed.add_field(
             name = "Chat Commands (With Prefix)",
-            value = "```ping, pong, hi, hello, fine, bad, invite, botinfo, goodmorning, 8ball```",
+            value = "```ping, pong, hi, hello, fine, bad, invite, info, goodmorning, 8ball```",
             inline = False
         )
         embed.add_field(name = "_ _", value = "_ _", inline = False)

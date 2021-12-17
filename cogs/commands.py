@@ -65,15 +65,24 @@ class Commands(commands.Cog):
 
         await ctx.send(embed=embed)
 
-    @commands.command()
-    async def botinfo(self, ctx):
 
-        embed = discord.Embed(title="Bot Info", description="**Description** - This is a Bot that can save your time and Chat with you when you are totally free!", timestamp=datetime.utcnow(), color=ctx.author.color)
-        embed.add_field(name="Developer", value="< Arinjoy.py />#0994", inline=False)
-        embed.add_field(name="Support Us", value="[invite](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)")
-        embed.set_footer(text=f"Command Requested By    {ctx.author}")
+    @commands.command()
+    async def info(self, ctx):
+
+        embed = discord.Embed(title="", description="Hello! I am **Perfectz** a **Multi-purpose** bot!", color=discord.Color.random())
+        embed.set_author(name=self.client.user.name, icon_url=self.client.user.avatar_url)
+        embed.add_field(name="Prefix", value="**p.** and **P.**", inline=True)
+        embed.add_field(name="Discord Library", value="discord.py", inline=True)
+        embed.add_field(name="Developer", value="< Arinjoy.py />#0994", inline=True)
+        embed.add_field(name="In Servers", value=f"{len(self.client.guilds)}", inline=True)
+        embed.add_field(name="Created on", value="December 8 2021", inline=True)
+        embed.add_field(name="Discriminator", value="0", inline=True)
+        embed.add_field(name="Invite", value="[Invite](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)", inline=True)
+        embed.add_field(name="Vote", value="[Discord Bots List](https://discordbotlist.com/bots/perfectz)", inline=True)
+        embed.set_footer(text=f"Requested by   {ctx.author}")
 
         await ctx.send(embed=embed)
+
 
     @commands.command()
     async def tos(self, ctx):
