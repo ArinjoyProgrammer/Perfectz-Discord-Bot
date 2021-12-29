@@ -35,7 +35,7 @@ class Calculator(commands.Cog):
     async def div(self, ctx, num1: int, num2: int):
         embed = discord.Embed(title="Calculation (Division)", description=num1/num2, timestamp=datetime.utcnow(), color=ctx.author.color)
         await ctx.send(embed=embed)
-        
+
 
 
 def setup(client):

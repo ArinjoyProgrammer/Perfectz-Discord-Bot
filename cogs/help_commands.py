@@ -19,6 +19,7 @@ class HelpCommand(commands.Cog):
         embed.add_field(name="Datetime Commands", value="``p.help datetime``", inline=True)
         embed.add_field(name="Roles Commands", value="``p.help roles``", inline=True)
         embed.add_field(name="Meme Command", value="``p.help meme``", inline=True)
+        embed.add_field(name="Games Commands", value="``p.help games``", inline=True)
         embed.add_field(name="Normal Messages Commands", value="``p.help normiemsg``", inline=True)
         embed.add_field(name="Other More Commands", value="``p.help othermorecmds``", inline=True)
 
@@ -82,6 +83,15 @@ class HelpCommand(commands.Cog):
         embed = discord.Embed(title="Meme Command Help  ||  Perfectz Bot", decsription="", timestamp=datetime.utcnow(), color=ctx.author.color)
         embed.add_field(name="Meme (Without Special Arguments) (With Prefix)", value="```p.meme```", inline=False)
         embed.set_footer(text=f"Command Requested bt {ctx.author}")
+
+        await ctx.send(embed=embed)
+
+
+    @help.command()
+    async def games(self, ctx):
+        embed = discord.Embed(title="Games Command Help  ||  Perfectz Bot", description="", timestamp=datetime.utcnow(), color=ctx.author.color)
+        embed.add_field(name="Games (With Prefix)", value="``p.rps``", inline=False)
+        embed.set_footer(text=f'Command Requested by {ctx.author}')
 
         await ctx.send(embed=embed)
 

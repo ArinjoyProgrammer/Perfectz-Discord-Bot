@@ -25,6 +25,6 @@ class Events(commands.Cog):
         await reaction.add_reaction(reactions[1])
 
 
-
+            
 def setup(client):
     client.add_cog(Events(client))

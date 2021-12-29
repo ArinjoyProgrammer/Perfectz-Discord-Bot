@@ -29,7 +29,11 @@ class Moderation(commands.Cog):
         mutedRole = discord.utils.get(ctx.guild.roles, name="Muted")
 
         await member.remove_roles(mutedRole)
-        await member.send(f" you have unmutedd from: - {ctx.guild.name}")
+        try:
+            await member.send(f" you have unmutedd from: - {ctx.guild.name}")
+        except:
+            await ctx.send("The member's dms were closed!")
+        
         embed = discord.Embed(title="unmute", description=f" unmuted-{member.mention}",colour=discord.Colour.light_gray())
         await ctx.send(embed=embed)
 
@@ -73,12 +77,7 @@ class Moderation(commands.Cog):
     async def clear(self, ctx, amount: int):
         await ctx.channel.purge(limit=amount)
         await ctx.send("THE MESSAGES ARE DELETED", delete_after=2)
-
-    @clear.error
-    async def clear_error(self, error, ctx):
-        if isinstance(error, error.MissingRequiredArguments):
-            await ctx.send(":redTick: You are missing Required Arguments")
-
+        
 
 
 def setup(client):

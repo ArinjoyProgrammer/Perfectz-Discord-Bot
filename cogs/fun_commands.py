@@ -51,7 +51,7 @@ class FunCommands(commands.Cog):
         await asyncio.sleep(4)
         await ctx.send(f"A **Dangerous Hacking** Completed on **{member}**\nDon't mind this was a really **Fake Hack**")
 
-        
+            
 
 def setup(client):
     client.add_cog(FunCommands(client))
