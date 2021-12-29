@@ -1,4 +1,5 @@
 Bot Invite Link - https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775
+Bot Invite Link (short) - https://dsc.gg/perfectzbot
 
 
 from discord.ext.commands import Bot
