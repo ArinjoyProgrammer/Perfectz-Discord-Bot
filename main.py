@@ -1,7 +1,6 @@
-from types import prepare_class
-from asyncio.locks import Event
 import discord
 from discord.ext import commands
+from discord.ext.commands import has_permissions
 import os
 import asyncio
 import random
@@ -40,7 +39,7 @@ client.loop.create_task(ch_pr())
 
 @client.event
 async def on_ready():
-    print(f"{client.user} is Online on Discord")
+    print(f"{client.user} is Online on discord")
 
 for filename in os.listdir('./cogs'):
     if filename.endswith('.py'):

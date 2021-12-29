@@ -17,6 +17,10 @@ class Commands(commands.Cog):
         await ctx.reply("Pong!")
 
     @commands.command()
+    async def pong(self, ctx):
+        await ctx.reply("Ping!")
+
+    @commands.command()
     async def slap(self, ctx, member: discord.Member, *, reason="No reason was given for Slapping!"):
 
         embed = discord.Embed(title="Slapped!!!", description=f"You slapped {member.mention}  |  Reason: **{reason}**", timestamp=datetime.utcnow(), color=ctx.author.color)
@@ -72,13 +76,13 @@ class Commands(commands.Cog):
         embed = discord.Embed(title="", description="Hello! I am **Perfectz** a **Multi-purpose** bot!", color=discord.Color.random())
         embed.set_author(name=self.client.user.name, icon_url=self.client.user.avatar_url)
         embed.add_field(name="Prefix", value="**p.** and **P.**", inline=True)
-        embed.add_field(name="Discord Library", value="discord.py", inline=True)
+        embed.add_field(name="discord Library", value="discord.py", inline=True)
         embed.add_field(name="Developer", value="< Arinjoy.py />#0994", inline=True)
         embed.add_field(name="In Servers", value=f"{len(self.client.guilds)}", inline=True)
         embed.add_field(name="Created on", value="December 8 2021", inline=True)
         embed.add_field(name="Discriminator", value="0", inline=True)
         embed.add_field(name="Invite", value="[Invite](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)", inline=True)
-        embed.add_field(name="Vote", value="[Discord Bots List](https://discordbotlist.com/bots/perfectz)", inline=True)
+        embed.add_field(name="Vote", value="[discord Bots List](https://discordbotlist.com/bots/perfectz)", inline=True)
         embed.set_footer(text=f"Requested by   {ctx.author}")
 
         await ctx.send(embed=embed)
@@ -86,7 +90,7 @@ class Commands(commands.Cog):
 
     @commands.command()
     async def tos(self, ctx):
-        await ctx.send("Discord TOS: https://discord.com/terms/")
+        await ctx.send("discord TOS: https://discord.com/terms/")
 
     @commands.command(aliases=['8ball', '8b'])
     async def eightball(self, ctx, *, question):
@@ -119,13 +123,10 @@ class Commands(commands.Cog):
         'Very Doubtful']
         await ctx.send(f":8ball: Question: {question}\n:8ball: Answer: {random.choice(responses)}")
 
-    @commands.command(aliases=['gm'])
-    async def goodmorning(self, ctx, *, member: discord.Member):
 
-        embed = discord.Embed(title="Good Morning", description=f"You wished **Good morning** to {member.mention}", timestamp=datetime.utcnow(), color=ctx.author.color)
-        embed.set_image(url="https://cdn.discordapp.com/attachments/911200129611071490/919604937040724059/gm.jpg")
-
-        await ctx.send(embed=embed)
+    @commands.command()
+    async def spoiler(self, ctx, *, spoiler="||No **Spoiler Message** was given||"):
+        await ctx.send(f"||{spoiler}||")
 
 
 

@@ -1,4 +1,4 @@
-# Perfectz Discord Bot | Documentation
+# Perfectz discord Bot | Documentation
 
 This is a **Documentation Page** of Perfectz Discord Bot
 
@@ -36,7 +36,7 @@ This is a **Documentation Page** of Perfectz Discord Bot
 # What if you find some **Issues** in the bot?
 
 - If you find some issues in the bot! Contact us from our **Email - arinjoy762@gmail.com**<br/>
-- Or contact from our **Support Sever** in Discord
+- Or contact from our **Support Sever** in discord
 
 <br/><br/>
 

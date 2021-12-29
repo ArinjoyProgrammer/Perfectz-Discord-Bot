@@ -1,5 +1,6 @@
 import discord
 from discord.ext import commands
+from discord_components.dpy_overrides import send_message
 
 
 class MessageContentCommands(commands.Cog):
@@ -8,10 +9,13 @@ class MessageContentCommands(commands.Cog):
 
 
 
-    # @commands.Cog.listener()
-    # async def on_message(self, message):
-    #     if self.client.mentioned(message):
-    #         await message.send("Hello my name is ``Perfectz Bot`` and my prefix in this server is ``p. and P.``")
+    @commands.Cog.listener()
+    async def on_message(self, message):
+
+        msg = message.content
+
+        if msg.startswith("perfectz"):
+            await message.channel.send("Hello my name is ``Perfectz Bot`` and my prefix in this server is ``p. and P.``")
     
 
     

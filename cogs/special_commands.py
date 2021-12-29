@@ -161,5 +161,12 @@ class SpecialCommands(commands.Cog):
         await ctx.send(f"**{member}** joined on **{time_joined}**")
 
 
+    @commands.command(aliases=['cngnick'])
+    async def change_nick(self, ctx, member: discord.Member, nick):
+        await member.edit(nick=nick)
+        await ctx.send(f'Nickname was changed for {member.mention} ')
+
+
+
 def setup(client):
     client.add_cog(SpecialCommands(client))
