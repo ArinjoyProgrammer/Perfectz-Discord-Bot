@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 /.env
+
+# .txt file
+bot_commands_plans.txt
