@@ -51,6 +51,20 @@ class FunCommands(commands.Cog):
         await asyncio.sleep(4)
         await ctx.send(f"A **Dangerous Hacking** Completed on **{member}**\nDon't mind this was a really **Fake Hack**")
 
+
+    # @client.command()
+    # async def dadjoke(ctx):
+    #     url = "https://dad-jokes.p.rapidapi.com/random/joke"
+
+
+    #     async with request("GET", url, headers = {
+    #     'x-rapidapi-host': "dad-jokes.p.rapidapi.com",
+    #     'x-rapidapi-key': "my-key"
+    #     }) as response:
+    #     if response.status == 200:
+    #         dj = await response.json()
+    #         print(data["body"])
+
             
 
 def setup(client):

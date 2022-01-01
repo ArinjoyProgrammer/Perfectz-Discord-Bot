@@ -1,6 +1,9 @@
 import discord
+from discord import member
+from discord import message
 from discord.ext import commands
 from datetime import datetime
+import asyncio
 
 
 class Moderation(commands.Cog):
@@ -50,12 +53,34 @@ class Moderation(commands.Cog):
 
 
     # Ban Command
+    class DurationConverter(commands.Converter):
+        async def convert(self, ctx, argument):
+            amount = argument[:-1]
+            unit = argument[-1]
+
+            if amount.isdigit() and unit in ['s', 'm']:
+                return (int(amount), unit)
+
+            raise commands.BadArgument(message="Not a valid duration!")
+
     @commands.command()
     @commands.has_permissions(ban_members=True)
-    async def ban(self, ctx, user: discord.Member, *, reason):
-        await ctx.guild.ban(user, reason=reason) # Bans the user.
-        await user.send(f"You have been banned in {ctx.guild} for {reason}")
-        await ctx.send(f"{user} has been successfully banned.")
+    async def ban(self, ctx, member: commands.MemberConverter, duration: DurationConverter):
+
+        multiplier = {'s': 1, 'm': 60}
+        amount, unit = duration
+
+        await ctx.guild.ban(member)
+        await ctx.send(f"{member} has been banned from {ctx.guild.name} for {amount}{unit}")
+        await asyncio.sleep(amount * multiplier[unit])
+        await ctx.guild.unban(member)
+
+
+    @commands.command()
+    @commands.has_permissions(ban_members=True)
+    async def tempban(self, ctx, member: commands.MemberConverter, duration: DurationConverter):
+        await ctx.guild.ban(member)
+        await ctx.send(f"{member} has been banned from {ctx.guild.name}")
 
 
     # Unban Command
@@ -73,7 +98,7 @@ class Moderation(commands.Cog):
 
 
     @commands.command()
-    @commands.has_permissions(manage_messages=True)
+    # @commands.has_permissions(manage_messages=True)
     async def clear(self, ctx, amount: int):
         await ctx.channel.purge(limit=amount)
         await ctx.send("THE MESSAGES ARE DELETED", delete_after=2)

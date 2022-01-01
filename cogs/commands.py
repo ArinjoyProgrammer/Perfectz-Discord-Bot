@@ -14,11 +14,15 @@ class Commands(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx):
-        await ctx.reply("Pong!")
+        embed = discord.Embed(description=f"Pong! ```{self.client.latency * 1000}``` ms!")
+
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def pong(self, ctx):
-        await ctx.reply("Ping!")
+        embed = discord.Embed(description=f"Ping! ```{self.client.latency * 1000}``` ms")
+
+        await ctx.send(embed=embed)
 
     @commands.command()
     async def slap(self, ctx, member: discord.Member, *, reason="No reason was given for Slapping!"):
@@ -58,7 +62,7 @@ class Commands(commands.Cog):
     @commands.command(aliases=['inv'])
     async def invite(self, ctx):
 
-        embed = discord.Embed(title="Invite The Bot", description="Invite by clicking here  -->  [Click Invite](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)", timestamp=datetime.utcnow(), color=discord.Color.purple())
+        embed = discord.Embed(title="Invite The Bot", description="Invite by clicking here  -->  [Click To Invite](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)", timestamp=datetime.utcnow(), color=discord.Color.purple())
         await ctx.send(embed=embed)
 
     @commands.command()

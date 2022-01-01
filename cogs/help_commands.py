@@ -8,20 +8,23 @@ class HelpCommand(commands.Cog):
         self.client = client
 
         
+    emojis = ['✨', '', '', '', '']
+
     ## Main Help Command
     @commands.group(invoke_without_command=True)
     async def help(self, ctx):
         embed = discord.Embed(title="Help Command ||  Perfectz Bot", description="", timestamp=datetime.utcnow(), color=ctx.author.color)
         embed.set_author(name=self.client.user.name, icon_url=self.client.user.avatar_url)
-        embed.add_field(name="Normal Commands", value="``p.help commands``", inline=True)
-        embed.add_field(name="Calculator Commands", value="``p.help moderation``", inline=True)
-        embed.add_field(name="User Commands", value="``p.help usercommands``", inline=True)
-        embed.add_field(name="Datetime Commands", value="``p.help datetime``", inline=True)
-        embed.add_field(name="Roles Commands", value="``p.help roles``", inline=True)
-        embed.add_field(name="Meme Command", value="``p.help meme``", inline=True)
-        embed.add_field(name="Games Commands", value="``p.help games``", inline=True)
-        embed.add_field(name="Normal Messages Commands", value="``p.help normiemsg``", inline=True)
-        embed.add_field(name="Other More Commands", value="``p.help othermorecmds``", inline=True)
+        embed.add_field(name="✨ Normal Commands", value="``p.help commands``", inline=True)
+        embed.add_field(name="💡 Calculator Commands", value="``p.help moderation``", inline=True)
+        embed.add_field(name="😃 User Commands", value="``p.help usercommands``", inline=True)
+        embed.add_field(name="⏲️ Datetime Commands", value="``p.help datetime``", inline=True)
+        embed.add_field(name="🎌 Roles Commands", value="``p.help roles``", inline=True)
+        embed.add_field(name="📰 Images Command", value="``p.help images``", inline=True)
+        embed.add_field(name="🕹️ Games Commands", value="``p.help games``", inline=True)
+        embed.add_field(name="😃 Normal Messages Commands", value="``p.help normiemsg``", inline=True)
+        embed.add_field(name="🌇 Other More Commands", value="``p.help othermorecmds``", inline=True)
+        embed.set_footer(text=f"Command Requested by {ctx.author}")
 
         await ctx.send(embed=embed)
 
@@ -33,11 +36,11 @@ class HelpCommand(commands.Cog):
 
         embed = discord.Embed(title="Chat Commands Help  ||  Perfectz Bot", description="", timestamp=datetime.utcnow(), color=ctx.author.color)
         embed.add_field(name="Normal Commands (Without Special Arguments) (With Prefix)", value="```ping, pong, hello, hi, fine, bad, invite, botversion, info, tos```", inline=False)
-        embed.add_field(name="slap (With Prefix)", value="``p.slap <mention the member> <write the reason>``", inline=False)
-        embed.add_field(name="wish (With Prefix)", value="``p.wish <mention the member> <write the wish>``", inline=False)
-        embed.add_field(name="greet (With Prefix)", value="``p.greet <mention the member> <greet message>``", inline=False)
-        embed.add_field(name="eightball (With Prefix)", value="``p.eightball <question>``", inline=False)
-        embed.add_field(name="spoiler (With Prefix)", value="``p.spoiler <spoiler message>``", inline=False)
+        embed.add_field(name="Slap (With Prefix)", value="``p.slap <mention the member> <write the reason>``", inline=False)
+        embed.add_field(name="Wish (With Prefix)", value="``p.wish <mention the member> <write the wish>``", inline=False)
+        embed.add_field(name="Greet (With Prefix)", value="``p.greet <mention the member> <greet message>``", inline=False)
+        embed.add_field(name="Eightball (With Prefix)", value="``p.eightball <question>``", inline=False)
+        embed.add_field(name="Spoiler (With Prefix)", value="``p.spoiler <spoiler message>``", inline=False)
         embed.set_footer(text=f"Command Requested by {ctx.author}")
 
         await ctx.send(embed=embed)
@@ -71,17 +74,18 @@ class HelpCommand(commands.Cog):
     async def datetime(self, ctx):
 
         embed = discord.Embed(title="Datetime Command Help  ||  Perfectz Bot", description="", timestamp=datetime.utcnow(), color=ctx.author.color)
-        embed.add_field(name="Datetime (Without Special Arguments) (With Prefix)", value="```p.nowtime```", inline=False)
+        embed.add_field(name="Datetime (Without Special Arguments) (With Prefix)", value="```p.nowtime, p.date, p.time```", inline=False)
         embed.set_footer(text=f"Command Requested by {ctx.author}")
 
         await ctx.send(embed=embed)
 
 
     @help.command()
-    async def meme(self, ctx):
+    async def images(self, ctx):
 
         embed = discord.Embed(title="Meme Command Help  ||  Perfectz Bot", decsription="", timestamp=datetime.utcnow(), color=ctx.author.color)
-        embed.add_field(name="Meme (Without Special Arguments) (With Prefix)", value="```p.meme```", inline=False)
+        embed.add_field(name="Meme (Without Special Arguments) (With Prefix)", value="``p.meme``", inline=False)
+        embed.add_field(name="Random Image (With Prefix)", value="``p.img <image name>``", inline=False)
         embed.set_footer(text=f"Command Requested bt {ctx.author}")
 
         await ctx.send(embed=embed)
@@ -90,7 +94,7 @@ class HelpCommand(commands.Cog):
     @help.command()
     async def games(self, ctx):
         embed = discord.Embed(title="Games Command Help  ||  Perfectz Bot", description="", timestamp=datetime.utcnow(), color=ctx.author.color)
-        embed.add_field(name="Games (With Prefix)", value="``p.rps``", inline=False)
+        embed.add_field(name="Games (With Prefix)", value="``p.rps, p.gtn <number between 1 and 10>``", inline=False)
         embed.set_footer(text=f'Command Requested by {ctx.author}')
 
         await ctx.send(embed=embed)

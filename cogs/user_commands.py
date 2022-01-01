@@ -27,7 +27,7 @@ class UserCommands(commands.Cog):
 
     @commands.command()
     async def dm(self, ctx, member: discord.Member, *, dm_msg="No **DM** Message was given!"):
-        await member.send(f"{dm_msg}\n\nMessage sent by **{ctx.author}**")
+        await member.send(f"{dm_msg}\n\nMessage sent by **{ctx.author}**\nMessage sent from (Server) - {ctx.guild.name}")
             
 
 
