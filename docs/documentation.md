@@ -30,7 +30,7 @@ This is a **Documentation Page** of Perfectz Discord Bot
 
 - There you can try all those commands and have some fun with your friends !
 
-- Some commands are:<br />Slap<br />Greet<br />luckynumber<br />coolrate<br />etc...
+- Some commands are:<br />Slap<br />Greet<br />luckynumber<br />coolrate<br />etc..
 
 
 # What if you find some **Issues** in the bot?
