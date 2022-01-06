@@ -1,5 +1,7 @@
+from logging import PlaceHolder
 import discord
 from discord import emoji
+from discord import member
 from discord.ext import commands
 from datetime import datetime
 import time
@@ -7,13 +9,14 @@ import asyncio
 import random
 from PIL import Image
 from io import BytesIO
-from discord_components import *
+import json
 
 
 class SpecialCommands(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+    # DiscordComponents(client)
 
 
     @commands.command()
@@ -165,6 +168,65 @@ class SpecialCommands(commands.Cog):
     async def change_nick(self, ctx, member: discord.Member, nick):
         await member.edit(nick=nick)
         await ctx.send(f'Nickname was changed for {member.mention} ')
+
+
+    # @client.command()
+    # async def select(self, ctx):
+    #     await ctx.send("This is new to discord!",
+    #                     components=[
+    #                         Select(placeHolder="Select Something", options=[SelectOption(label="A", value="a", emoji=None), SelectOption(label="B", value="b", emoji=None)])
+    #                     ]
+    #     )
+    #     interaction = await client.wait_for("select_option", check=lambda i: i.component[0].value=="a")
+    #     await interaction.respond(content="You clicked the `A` value")
+
+
+    # @commands.command()
+    # async def buttons(self, ctx):
+    #     button1 = Button(label="Click me!", style=discord.ButtonStyle.green, emoji=None)
+    #     button2 = Button(label="Hello There", style=discord.ButtonStyle.danger, emoji=None)
+    #     button3 = Button(label="Github", url='https://github.com/ArinjoyProgrammer/')
+
+    #     view = View()
+    #     view.add_item(button1)
+    #     view.add_item(button2)
+    #     view.add_item(button3)
+    #     await ctx.send("Hello", view=view)
+
+    
+    @commands.command(aliases=['rb', 'r_b'])
+    async def rate_bot(self, ctx, name, rate_stars, *, feedback="No **Feedback** was given"):
+        rateings = ['1', '2', '3', '4', '5']
+        member = ctx.author
+
+        if rate_stars == "1":
+            # await member.send("")
+            await ctx.reply("Thank you for your feedback!")
+        elif rate_stars == "2":
+            # await member.send("")
+            await ctx.reply("Thank you for your feedback!")
+        elif rate_stars == "3":
+            # await member.send("")
+            await ctx.reply("Thank you for your feedback!")
+        elif rate_stars == "4":
+            # await member.send("")
+            await ctx.reply("Thank you for your feedback!")
+        elif rate_stars == "5":
+            # await member.send("")
+            await ctx.reply("Thank you for your feedback!")
+        # else:
+        #     await ctx.reply("I can't recognize your ratings\nRatings are upto - 5")
+
+        data = {
+            "name": f"{name}",
+            "stars": f"{rate_stars}",
+            "feedback": f"{feedback}"
+        }
+
+        temp_file = json.dumps(data)
+
+        with open("feedback.json", "w") as file:
+            file.write(temp_file)
 
 
 

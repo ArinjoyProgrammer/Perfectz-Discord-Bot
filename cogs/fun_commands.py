@@ -4,6 +4,8 @@ from datetime import datetime
 import time
 import asyncio
 import random
+# from discord_slash import SlashCommands
+# from discord_slash import cog_ext, SlashContext
 
 
 class FunCommands(commands.Cog):

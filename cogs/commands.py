@@ -62,14 +62,21 @@ class Commands(commands.Cog):
     @commands.command(aliases=['inv'])
     async def invite(self, ctx):
 
-        embed = discord.Embed(title="Invite The Bot", description="Invite by clicking here  -->  [Click To Invite](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)", timestamp=datetime.utcnow(), color=discord.Color.purple())
+        embed = discord.Embed(title="Invite The Bot", description="These are the two invite links of the bot!", timestamp=datetime.utcnow(), color=discord.Color.purple())
+
+        embed.add_field(name="Invite Link", value="[Click To Invite](https://discord.com/oauth2/authorize?client_id=898073261982769185&scope=bot&permissions=1099511627775)", inline=False)
+
+        embed.add_field(name="Invite Link (With Slash Commands (Beta))", value="[Click To Invite (With Slash Commands (Beta))](https://discord.com/api/oauth2/authorize?client_id=898073261982769185&permissions=1644972474359&scope=bot%20applications.commands)", inline=False)
+
+        embed.set_footer(text=f"Command Requested by {ctx.author}")
+
         await ctx.send(embed=embed)
 
     @commands.command()
     async def botversion(self, ctx):
-        botversions = ['Beta Version (Development Version)', '0.1.0', '0.2.0', '0.3.0', '0.4.0', '0.5.0']
+        botversions = ['Beta Version (Development Version)', 'v0.1', 'v0.2', 'v0.3', 'v0.4', 'v0.5', 'v0.6', 'v0.7', 'v0.8', 'v0.9', 'v0.10', 'v0.11']
 
-        embed = discord.Embed(title="Bot Version!", description=f"The Version of the bot is **{botversions[0]}**", timestamp=datetime.utcnow(), color=discord.Color.random())
+        embed = discord.Embed(title="Bot Version!", description=f"The Version of the bot is **{botversions[4]}**", timestamp=datetime.utcnow(), color=discord.Color.random())
 
         await ctx.send(embed=embed)
 
@@ -95,6 +102,16 @@ class Commands(commands.Cog):
     @commands.command()
     async def tos(self, ctx):
         await ctx.send("discord TOS: https://discord.com/terms/")
+
+
+    @commands.command()
+    async def github(self, ctx):
+        embed = discord.Embed(title="Github  ||  **Perfectz Discord Bot**", description="This is the Github Page of Perfectz Discord Bot", timestamp=datetime.utcnow(), color=discord.Color.purple())
+        embed.add_field(name="Github Page Link", value="Github Page - https://github.com/ArinjoyProgrammer/Perfectz-Discord-Bot", inline=False)
+        embed.set_footer(text=f"Requested by {ctx.author}")
+
+        await ctx.send(embed=embed)
+
 
     @commands.command(aliases=['8ball', '8b'])
     async def eightball(self, ctx, *, question):
@@ -131,6 +148,15 @@ class Commands(commands.Cog):
     @commands.command()
     async def spoiler(self, ctx, *, spoiler="||No **Spoiler Message** was given||"):
         await ctx.send(f"||{spoiler}||")
+
+
+    @commands.command()
+    async def updates(self, ctx):
+        embed = discord.Embed(title="The Latest Update!!", description="See the Lates Updates of the bot below", timestamp=datetime.utcnow(), color=ctx.author.color)
+        embed.add_field(name="Brad New Slash Commands (Under Development)", value="Hello there! The new Slash Commands are releasing soon! There will be the same commands that the bot have but the commands will be included with the slash commands!\nBut for now you can use the normal commands (With Prefix)", inline=False)
+        embed.set_footer(text=f"Requested by {ctx.author}")
+
+        await ctx.send(embed=embed)
 
 
 
