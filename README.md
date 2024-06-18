@@ -34,7 +34,7 @@ For support, Contact us from our Email **arinjoy672@gmail.com**
 <br/><br/>
 
 <div align="center">
-<strong><i> Made with ❤️ by
+<strong><i> Made using ⏰ by
 
 [Arinjoy Github](https://github.com/ArinjoyProgrammer) • **<  Arinjoy.py />#0994** <!-- • [Arinjoy Email](arinjoy672@gmail.com) -->
 </i></strong> (discord)
